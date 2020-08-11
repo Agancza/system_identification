@@ -2,6 +2,7 @@ function y = AR(a, v)
 %########################################################################
 % Author: Artur Gancza
 % email: artur.gancza@pg.edu.pl
+%########################################################################
 % Function computes T samples of an time-varying n-th order autoregressive
 % process
 
