@@ -1,4 +1,4 @@
-function [theta_t, q_t, P_t] = sqrt_EWLS_step(y, phi, theta, P, lambda, q)
+function [theta_t, P_t, q_t] = sqrt_EWLS_step(y, phi, theta, P, lambda, q)
 %##########################################################################
 % Author: Artur Gancza
 % email: artur.gancza@pg.edu.pl
@@ -14,13 +14,13 @@ function [theta_t, q_t, P_t] = sqrt_EWLS_step(y, phi, theta, P, lambda, q)
 % P         square root of the inverse of regression matrix from the
 %           previous time moment, (n, n);
 % lambda    forgetting constant from range (0, 1];
-% q         previous value of prediction error;
+% q         previous estimate of variance;
 %
 % Outputs:
 % theta_t   estimated parameters values in a current moment of time (n, 1);
 % P_t       square root of an inverse of regression matrix in a current 
 %           moment of time (n, n);
-% q_t       current value of a prediction error;
+% q_t       current estimate of variance;
 %##########################################################################
 
     e = y - phi'*theta;
