@@ -5,10 +5,11 @@ function G = gram_schmidt(F, w)
 %##########################################################################
 % Computes w-orthonormal basis from given matrix of basis functions.
 % Function uses Gram-Schmidt procedure
-
+%
 % Inputs:
 % F     matrix of row vectors to normalize, (m, T), m <= T
 % w     row vector of weighting coefficients, (1, T)
+%
 % Outputs:
 % G     w-orthonormal basis, (m, T)
 %##########################################################################

@@ -12,7 +12,7 @@ function F = sin_cos(m, k)
 %
 % Returns:
 % F    matrix of basis functions, (m, 2k+1)
-
+%##########################################################################
     F = ones(m,1);
     t = -k:1:k;
     for i = 2:1:m

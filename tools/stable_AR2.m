@@ -4,11 +4,11 @@ function [y, k] = stable_AR2(a, v)
 % email: artur.gancza@pg.edu.pl
 %##########################################################################
 % Generates T samples of a stable time-varying 2-nd order AR process
-
+%
 % Inputs:
 % a     matrix of time-varying coefficients, (2, T)
 % v     variance of a driving noise, scalar or (1, T)
-
+%
 % Returns:
 % y     realization of an stable 2-nd order AR process
 % k     scaling coefficients for parameters (if stabilization was not

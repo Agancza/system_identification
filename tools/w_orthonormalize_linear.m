@@ -5,7 +5,7 @@ function [G, Q] = w_orthonormalize_linear(F, w)
 %##########################################################################
 % Computes w-orthonormal basis from given matrix of basis functions.
 % Function uses the linear transform
-
+%
 % Inputs:
 % F     matrix of row vectors to normalize, (m, T), m <= T
 % w     row vector of weighting coefficients, (1, T)
