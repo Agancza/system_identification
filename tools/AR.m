@@ -15,10 +15,10 @@ function y = AR(a, v)
 %##########################################################################
 
     [n, T] = size(a);
-    e = randn(1, T);
+    e = randn(T, 1);
     e = e .* sqrt(v);
-    y = zeros(1, T);
+    y = zeros(T, 1);
     for t = (n+1):1:T
-      y(t) = y(t-1:-1:t-n)*a(:,t) + e(t);
+      y(t) = a(:,t)'*y(t-1:-1:t-n) + e(t);
     end
 end

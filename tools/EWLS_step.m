@@ -20,11 +20,11 @@ function [theta_t, P_t, q_t] = EWLS_step(y, phi, theta, P, lambda, q)
 % P_t       the inverse of regression matrix in a current moment of time (n, n); 
 % q_t       current estimate of variance;
 %##########################################################################
-    e = y - phi'*theta;
+    e = y - theta'*phi;
     L = P * phi;
     M = lambda + phi'*L;
     k = L/M;
-    theta_t = theta + k*e;
+    theta_t = theta + k*conj(e);
     P_t = (P - (L*L')/M) / lambda; %Sherman-Morrison formula
-    q_t = q + (1 - phi'*k)*e^2;
+    q_t = q + (1 - phi'*k)*abs(e)^2;
 end

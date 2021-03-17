@@ -23,12 +23,12 @@ function [theta_t, P_t, q_t] = sqrt_EWLS_step(y, phi, theta, P, lambda, q)
 % q_t       current estimate of variance;
 %##########################################################################
 
-    e = y - phi'*theta;
+    e = y - theta'*phi;
     r = P'*phi;
     bt = lambda + (r'*r);
     al = bt + sqrt(lambda*bt);
     k = P*r/bt;
-    theta_t = theta + k*e;
+    theta_t = theta + k*conj(e);
     P_t = (P - bt*k*r'/al)/sqrt(lambda); %Sherman-Morrison formula
-    q_t = q + (1 - phi'*k)*e^2;
+    q_t = q + (1 - phi'*k)*abs(e)^2;
 end

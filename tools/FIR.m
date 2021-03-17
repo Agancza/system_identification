@@ -17,11 +17,11 @@ function [y, snr_y] = FIR(b, u, v)
 %##########################################################################
 
   [n, T] = size(b);
-  e = randn(1, T);
+  e = randn(T, 1);
   e = e .* sqrt(v);
-  y = zeros(1, T);
+  y = zeros(T, 1);
   for t = (n+1):1:T
-    y(t) = u(t:-1:t-n+1)*b(:,t);
+    y(t) = b(:,t)'*u(t:-1:t-n+1);
   end
   snr_y = snr(y, e);
   y = y + e;
