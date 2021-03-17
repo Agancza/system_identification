@@ -1,5 +1,6 @@
 
-addpath('../tools');
+addpath('../tools/general');
+addpath('../tools/identification');
 
 %% Test small square matrix
 A = randn(3);

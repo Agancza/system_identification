@@ -2,7 +2,8 @@ clear all;
 clc;
 close all;
 
-addpath('../tools');
+addpath('../tools/general');
+addpath('../tools/identification');
 
 T = 5000;
 a = 0.8*ones(1, T);
