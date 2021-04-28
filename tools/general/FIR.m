@@ -8,7 +8,7 @@ function [y, snr_y] = FIR(b, u, v)
 % 
 % Inputs:
 % b   matrix of system parameters, dimensions: (n, T)
-% u   vector of steering signal, (1, T)
+% u   vector of steering signal, (T, 1)
 % v   desired variance of Gaussian noice, sclaar or (1, T)
 % 
 % Returns:
